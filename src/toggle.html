@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {padding:60px;}
+
+.toggle-switch input[type=checkbox] {display:none}
+.toggle-switch label {cursor:pointer;}
+.toggle-switch label .toggle-track {
+  display:block;height:40px;width:80px;background:#eee;border-radius:20px;
+  position:relative;
+  margin-bottom:15px;border:1px solid #ccc;
+}
+
+.toggle-switch .toggle-track:before{
+  content:'';
+  display:inline-block;height:40px;width:40px;background:green;
+  border-radius:20px;
+  position:absolute;
+  top:0;
+  right:0;
+  transition:right .2s ease-in;
+}
+
+.toggle-switch input[type="checkbox"]:checked + label .toggle-track:before{
+  background:gray;
+  right:40px;
+}
+        </style>
+    </head>
+    <body>
+        <div class="toggle-switch">
+            <input type="checkbox" id="chkTest" name="chkTest">
+            <label for="chkTest">
+              <span class="toggle-track"></span>
+              
+            </label>
+          </div>
+    </body>
+</html>

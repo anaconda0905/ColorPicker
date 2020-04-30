@@ -106,6 +106,7 @@ class IconColourPicker extends  React.Component {
             
 			<div className={`dropdown icon-picker ${dropdownOpen ? 'open' : ''}`} ref={this.setWrapperRef} style={{width:"250px"}}>
                 <span style={{display:"block"}}>Color component label</span>
+                
 				<button className="btn btn-default dropdown-toggle" type="button" onClick={() => this.toggleDropdown()}>
                     <div className="color-picker-background" style={{backgroundColor:selectedColour1, visibility:dropdownDiv || dropdownOpen ? 'visible' : 'hidden'}}></div>
 					<span className="caret"></span>

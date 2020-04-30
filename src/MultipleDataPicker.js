@@ -75,7 +75,6 @@ class MultipleDataPicker extends React.Component {
         if (filterString.length === 0) {
             this.setState({ filteredComponentColours: this.state.componentColours })
         } else {
-            console.log("aaaaaaaaa", filterString);
             // const result = this.state.componentColours.filter(item => { console.log(item); return true; });
             // console.log(result);
             this.setState({ filteredComponentColours: this.state.componentColours.filter(item => item.includes(filterString)) });
@@ -89,31 +88,35 @@ class MultipleDataPicker extends React.Component {
 
         return (
 
-            <div className={`dropdown icon-picker ${dropdownOpen ? 'open' : ''}`} ref={this.setWrapperRef} style={{ width: "250px" }}>
+            <div className={`dropdown icon-picker ${dropdownOpen ? 'open' : ''}`} ref={this.setWrapperRef} style={{ width: "250px"}}>
                 <span style={{ display: "block" }}>From</span>
-                <button className="btn btn-default dropdown-toggle" type="button" onClick={() => this.toggleDropdown()}>
-                    <span className="data-picker-background">{selectedColour1}</span>
-                    <span className="caret"></span>
+                <button className="data-dropdown-toggle">
+                    <i className="fa fa-user-o" style={{fontSize:"15px"}}></i>
                 </button>
-                {
-                    dropdownOpen &&
+                <div style={{display:"inline-block", width:"85%"}}>
+                    <button className="btn btn-default dropdown-toggle" style={{borderRadius:"0"}} type="button" onClick={() => this.toggleDropdown()}>
+                        <span className="data-picker-background">{selectedColour1}</span>
+                        <span className="caret"></span>
+                    </button>
+                    {
+                        dropdownOpen &&
+                        <ul className="data-dropdown-menu" style={{ display: "block" }} >
+                            <div className="data-dropdown-menu-content">
+                                <input type={"text"} className="data-search" onChange={this.handleChange} placeholder="Type to search" /><br />
 
-                    <ul className="data-dropdown-menu" style={{ display: "block" }} >
-                        <div className="data-dropdown-menu-content">
-                            <input type={"text"} className="data-search" onChange={this.handleChange} placeholder="Type to search" /><br />
-
-                            <ul className="icons">
-                                {filtered.map((colour, index) => {
-                                    return (
-                                        <li key={index} onClick={() => this.setSelectedColour1(colour)}>
-                                            <span >{colour}</span>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
-                    </ul>
-                }
+                                <ul className="icons">
+                                    {filtered.map((colour, index) => {
+                                        return (
+                                            <li key={index} onClick={() => this.setSelectedColour1(colour)}>
+                                                <span >{colour}</span>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                        </ul>
+                    }
+                </div>
             </div>
         );
     }

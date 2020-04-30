@@ -9,9 +9,32 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    
+    <style>
+      .toggle-switch input[type=checkbox] {display:none}
+.toggle-switch label {cursor:pointer;}
+.toggle-switch label .toggle-track {
+  display:block;height:40px;width:80px;background:#eee;border-radius:20px;
+  position:relative;
+  margin-bottom:15px;border:1px solid #ccc;
+}
+
+.toggle-switch .toggle-track:before{
+  content:'';
+  display:inline-block;height:40px;width:40px;background:green;
+  border-radius:20px;
+  position:absolute;
+  top:0;
+  right:0;
+  transition:right .2s ease-in;
+}
+
+.toggle-switch input[type="checkbox"]:checked + label .toggle-track:before{
+  background:gray;
+  right:40px;
+}
+    </style>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -27,10 +50,19 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    
+    <div class="toggle-switch" style="padding: 20px;">
+      <input type="checkbox" id="chkTest" name="chkTest">
+      <label for="chkTest">
+        <span class="toggle-track"></span>
+        
+      </label>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

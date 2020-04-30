@@ -36,3 +36,11 @@ class IconInput extends React.Component {
 }
 
 export default IconInput;
+
+{/* <IconInput 
+          hasLabel='true'
+          htmlFor='textInput'
+          label='Text input'
+          required='true'
+          type='text'
+        /> */}
