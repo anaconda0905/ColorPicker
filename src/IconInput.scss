@@ -1,0 +1,29 @@
+.iconinputfield {
+    margin: 0;
+    border: 0;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    
+    &+& {
+        margin-top: 24px;
+    }
+    input{
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        &:focus{
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+            outline: none;
+        }
+    }
+}
+
+.iconinputlabel {
+    margin-bottom: 8px;
+    display: block;
+    color: #2b2e4a;
+}
